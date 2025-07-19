@@ -68,13 +68,13 @@ const { loggedIn, setUserName } = useContext(UserContext);
           <input
             type="text"
             data-testid="searchInput"
-            className="border border-solid border-black"
+            className="border border-solid border-gray-300 bg-white text-gray-800 px-3 py-2 rounded-lg focus:outline-none focus:border-orange-500"
             placeholder="Search for restaurants"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
           <button
-            className="px-4 py-2 bg-green-100 m-4 rounded-lg"
+            className="px-4 py-2 bg-orange-500 text-white m-4 rounded-lg hover:bg-orange-600 transition-colors"
             onClick={() => {
               const filtered = listOfRestaurants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -85,7 +85,7 @@ const { loggedIn, setUserName } = useContext(UserContext);
             Search
           </button>
           <button
-  className="px-4 py-2 bg-gray-100 m-4 rounded-lg"
+  className="px-4 py-2 bg-green-500 text-white m-4 rounded-lg hover:bg-green-600 transition-colors"
   onClick={() => {
     const filtered = listOfRestaurants.filter(
       (res) => res.info.avgRating > 4
@@ -97,8 +97,8 @@ const { loggedIn, setUserName } = useContext(UserContext);
 </button>
         </div  >
         <div className="search m-4 p-4 flex items-center">
-          <label>UserName:</label>
-          <input className="border border-black p-2" 
+          <label className="mr-2 text-gray-700 font-medium">UserName:</label>
+          <input className="border border-gray-300 bg-white text-gray-800 p-2 rounded-lg focus:outline-none focus:border-orange-500" 
           value={loggedIn}
           onChange={(e)=>setUserName(e.target.value)}/>
         </div>

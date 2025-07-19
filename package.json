@@ -8,7 +8,6 @@
     "test": "jest",
     "watch-test": "jest --watch",
     "coverage": "jest --coverage"
-      
   },
   "repository": {
     "type": "git",
@@ -51,7 +50,7 @@
     "react-icons": "^5.5.0",
     "react-redux": "^9.2.0",
     "react-router": "^6.22.3",
-    "react-router-dom": "^6.22.3",
+    "react-router-dom": "^6.30.1",
     "tailwindcss": "^4.1.10"
   },
   "browserslist": [
