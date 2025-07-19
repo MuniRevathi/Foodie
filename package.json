@@ -1,17 +1,18 @@
 {
-  "name": "namaste-react",
+  "name": "foodie-app",
   "version": "1.0.0",
-  "description": "\"this is react by revathi\"",
+  "description": "Foodie - A React-based food delivery app",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
+    "preview": "npx serve dist",
     "test": "jest",
     "watch-test": "jest --watch",
     "coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MuniRevathi/namaste-react"
+    "url": "https://github.com/MuniRevathi/Foodie"
   },
   "keywords": [],
   "author": "Revathi",
@@ -34,6 +35,7 @@
     "parcel": "^2.14.4",
     "path-browserify": "^1.0.1",
     "process": "^0.11.10",
+    "serve": "^14.2.4",
     "stream-browserify": "^3.0.0",
     "string_decoder": "^1.3.0",
     "vm-browserify": "^1.1.2"
