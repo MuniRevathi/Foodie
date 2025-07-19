@@ -4,6 +4,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus.js";
 import UserContext from "./UserContext.js";
+import { API_BASE_URL } from "../utils/constants";
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
@@ -17,7 +18,7 @@ const Body = () => {
 
   const fetchData = async () => {
     try {
-      const data = await fetch("http://localhost:3000/api/restaurants");
+      const data = await fetch(`${API_BASE_URL}/api/restaurants`);
       
       if (!data.ok) {
         throw new Error(`HTTP error! status: ${data.status}`);
