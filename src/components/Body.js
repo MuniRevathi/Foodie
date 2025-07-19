@@ -16,25 +16,33 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=14.44840&lng=79.98880&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
-    const json = await data.json();
+    try {
+      const data = await fetch("http://localhost:3000/api/restaurants");
+      
+      if (!data.ok) {
+        throw new Error(`HTTP error! status: ${data.status}`);
+      }
+      
+      const json = await data.json();
 
-    const restaurantData = json?.data?.cards.find(
-      (card) => card?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+      const restaurantData = json?.data?.cards.find(
+        (card) => card?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      );
 
-    const restaurants =
-      restaurantData?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+      const restaurants =
+        restaurantData?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
 
-    // ✅ Optional: force first restaurant to be promoted for testing
-    if (restaurants.length > 0) {
-      restaurants[0].info.ribbon = { text: "PROMOTED" };
+      // ✅ Optional: force first restaurant to be promoted for testing
+      if (restaurants.length > 0) {
+        restaurants[0].info.ribbon = { text: "PROMOTED" };
+      }
+
+      setListOfRestaurants(restaurants);
+      setFilteredRestaurants(restaurants);
+    } catch (error) {
+      console.error("Error fetching restaurant data:", error);
+      // You could set an error state here or show a user-friendly message
     }
-
-    setListOfRestaurants(restaurants);
-    setFilteredRestaurants(restaurants);
   };
 
   const onlineStatus = useOnlineStatus();
