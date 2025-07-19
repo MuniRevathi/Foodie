@@ -3,7 +3,7 @@ export const LOGO_URL = "https://img.freepik.com/premium-vector/food-logo-with-s
 
 export const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/";
 
-// Use environment variable for API URL, fallback to localhost for development
-export const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:3000";
+// Use environment variable for API URL, fallback to live Render API
+export const API_BASE_URL = process.env.REACT_APP_API_URL || "https://foodie-5n13.onrender.com";
 
 export const MENU_API = `${API_BASE_URL}/api/menu/`;
