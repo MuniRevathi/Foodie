@@ -61,7 +61,7 @@ const Header = () => {
             {/* Online Status */}
             <div className="flex items-center space-x-2 bg-white bg-opacity-20 rounded-full px-3 py-1 mr-4">
               <div className={`w-2 h-2 rounded-full ${onlineStatus ? 'bg-green-400' : 'bg-red-400'}`}></div>
-              <span className="text-white text-sm font-medium">
+              <span className="text-orange-500 text-sm font-medium">
                 {onlineStatus ? 'Online' : 'Offline'}
               </span>
             </div>
@@ -106,11 +106,11 @@ const Header = () => {
             {/* User Info */}
             <div className="hidden md:flex items-center space-x-3 bg-white bg-opacity-20 rounded-full px-4 py-2">
               <div className="w-8 h-8 bg-white bg-opacity-30 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">
+                <span className="text-orange-600 font-bold text-sm">
                   {loggedInUser?.charAt(0)?.toUpperCase() || 'G'}
                 </span>
               </div>
-              <span className="text-white font-medium text-sm">{loggedInUser || 'Guest'}</span>
+              <span className="text-orange-500 font-medium text-sm">{loggedInUser || 'Guest'}</span>
             </div>
 
             {/* Login/Logout Button */}
@@ -157,7 +157,7 @@ const Header = () => {
             {/* Online Status */}
             <div className="flex items-center justify-center space-x-2 bg-white bg-opacity-20 rounded-lg px-3 py-2 mb-4">
               <div className={`w-2 h-2 rounded-full ${onlineStatus ? 'bg-green-400' : 'bg-red-400'}`}></div>
-              <span className="text-white text-sm font-medium">
+              <span className="text-orange-500 text-sm font-medium">
                 {onlineStatus ? 'Online' : 'Offline'}
               </span>
             </div>
@@ -177,7 +177,7 @@ const Header = () => {
 
             {/* Mobile User Info */}
             <div className="bg-white bg-opacity-20 rounded-lg px-4 py-3 text-center">
-              <div className="text-white font-medium">{loggedInUser || 'Guest User'}</div>
+              <div className="text-orange-500 font-medium">{loggedInUser || 'Guest User'}</div>
             </div>
           </nav>
         </div>
